@@ -79,7 +79,7 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-6 mb-12">
-            <button className="px-10 py-5 bg-[#7C3AED] text-white rounded-full text-xs font-black tracking-widest hover:scale-110 transition shadow-[0_0_40px_rgba(124,58,237,0.4)] uppercase">
+            <button id="work" className="px-10 py-5 bg-[#7C3AED] text-white rounded-full text-xs font-black tracking-widest hover:scale-110 transition shadow-[0_0_40px_rgba(124,58,237,0.4)] uppercase">
               View Work
             </button>
             <button className="px-10 py-5 border border-white/20 rounded-full text-xs font-black tracking-widest hover:bg-white hover:text-black transition uppercase">
