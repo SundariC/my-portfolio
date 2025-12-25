@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --purple: #7C3AED;
+  --dark: #030014;
+}
+
+body {
+  background-color: var(--dark);
+  color: white;
+  overflow-x: hidden;
+  cursor: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #7c3aed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out;
+}
+
+a:hover ~ .cursor-ring,
+button:hover ~ .cursor-ring {
+  transform: scale(1.8);
+}
+
+
+/* Page Transitions */
+.reveal-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-blur {
+  background: rgba(3, 0, 20, 0.5);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animated Gradient Mesh Background */
+.hero-mesh {
+  background-color: #050505;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(167, 139, 250, 0.1) 0px, transparent 50%);
+}
+
+/* Subtle Grain Overlay */
+.grain::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 50;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.magnetic {
+  transition: all 0.25s ease;
+}
+
+.magnetic:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.35);
+}
+
+/* section reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: reveal 0.8s ease forwards;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
