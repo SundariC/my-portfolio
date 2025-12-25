@@ -109,9 +109,7 @@ export default function Footer() {
               whileHover={{ scale: 1.1, y: -5 }}
               className="flex flex-col items-center gap-3 cursor-pointer group"
             >
-              {/* <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center relative group-hover:border-[#7C3AED]/50 transition-all">
-                <span className="text-white text-lg group-hover:text-[#7C3AED]">↑</span>
-              </div> */}
+              {/* hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhwer */}
               <span className="text-[8px] font-black uppercase tracking-[0.3em] text-gray-600 group-hover:text-white transition-colors">
                 Back to Top
               </span>
