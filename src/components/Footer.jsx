@@ -44,7 +44,7 @@ export default function Footer() {
         }}
         className="absolute inset-0 flex items-center justify-center text-[20vw] font-black text-white/[0.02] select-none uppercase tracking-tighter pointer-events-none"
       >
-        Connect
+        Contact
       </motion.h1>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Left Side: Text & Navbar Links */}
           <div className="text-left">
             <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-8 leading-none">
-              READY TO <br /> <span className="text-[#7C3AED] italic text-glow">COLLABORATE?</span>
+              CONTACT <br /> <span className="text-[#7C3AED] italic text-glow">ME</span>
             </h3>
             
             {/* Quick Links (Navbar items) */}
@@ -109,7 +109,7 @@ export default function Footer() {
               whileHover={{ scale: 1.1, y: -5 }}
               className="flex flex-col items-center gap-3 cursor-pointer group"
             >
-              {/* hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhwer */}
+              
               <span className="text-[8px] font-black uppercase tracking-[0.3em] text-gray-600 group-hover:text-white transition-colors">
                 Back to Top
               </span>

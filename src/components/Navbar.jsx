@@ -4,8 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
-
-  // Scroll pannumbothu navbar background and active link-ah mathura logic
+  // const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   useEffect(() => {
     const handleScroll = () => {
       // Background blur change on scroll
@@ -31,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about', id: 'about' },
+    { name: 'about', href: '#about', id: 'about' },
     { name: 'Skills', href: '#skills', id: 'skills' },
     { name: 'Work', href: '#work', id: 'work' },
     { name: 'Contact', href: '#contact', id: 'contact' },

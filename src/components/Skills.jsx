@@ -7,7 +7,11 @@ const skills = [
   { name: "JavaScript", level: 85 },
   { name: "React", level: 80 },
   { name: "Node.js", level: 75 },
+  { name: "Express", level: 70 },
+  { name: "Tailwindcss", level: 80 },
+  { name: "Postman", level: 90 },
   { name: "MongoDB", level: 70 },
+  { name: "Git", level: 90 },
 ];
 
 export default function Skills() {

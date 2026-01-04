@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function About() {
-  // Mouse position state add panniyachu
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {

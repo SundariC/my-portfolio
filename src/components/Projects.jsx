@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const projects = [
-  { id: 1, title: "Next-Gen SaaS", tech: "MERN Stack", desc: "Premium dashboard architecture." },
-  { id: 2, title: "E-Commerce Pro", tech: "React • Redux", desc: "High-performance shopping experience." },
-  { id: 3, title: "AI Portfolio", tech: "Framer • Node", desc: "Interactive AI-driven user interface." },
-];
-
 export default function Projects() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -17,6 +11,12 @@ export default function Projects() {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
+  const projects = [
+  { id: 1, title: "Next-Gen SaaS", tech: "MERN Stack", desc: "Premium dashboard architecture." },
+  { id: 2, title: "E-Commerce Pro", tech: "React • Redux", desc: "High-performance shopping experience." },
+  { id: 3, title: "AI Portfolio", tech: "Framer • Node", desc: "Interactive AI-driven user interface." },
+];
 
   return (
     <section id="work" className="relative min-h-screen py-32 overflow-hidden bg-[#050505]">
@@ -78,7 +78,9 @@ export default function Projects() {
 
               {/* Subtle Arrow Icon */}
               <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
-                <span className="text-[10px] text-gray-600 font-bold uppercase group-hover:text-white transition-colors">Details</span>
+                <span className="text-[10px] text-gray-600 font-bold uppercase group-hover:text-white transition-colors">Github Link</span>
+                <span className="text-gray-600 group-hover:translate-x-1 group-hover:text-[#7C3AED] transition-all">→</span>
+                <span className="text-[10px] text-gray-600 font-bold uppercase group-hover:text-white transition-colors">Deploy Link</span>
                 <span className="text-gray-600 group-hover:translate-x-1 group-hover:text-[#7C3AED] transition-all">→</span>
               </div>
             </motion.div>

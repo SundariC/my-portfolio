@@ -55,9 +55,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
         >
-          <span className="text-[#A78BFA] font-mono tracking-[0.4em] text-xs md:text-sm mb-6 block uppercase font-bold italic">
+          {/* <span className="text-[#A78BFA] font-mono tracking-[0.4em] text-xs md:text-sm mb-6 block uppercase font-bold italic">
             // MERN Stack Architect 
-          </span>
+          </span> */}
 
           <h1 className="text-7xl md:text-[9vw] font-black leading-[0.8] tracking-tighter mb-8 text-white uppercase">
             S<span className="text-[#7C3AED] italic drop-shadow-[0_0_30px_rgba(124,58,237,0.5)]">UNDAR</span>I
