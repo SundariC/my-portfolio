@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Project1 from "../assets/Project1.jpg"
+// import Project2 from "../assets/Project2.jpg"
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Projects() {
@@ -14,28 +15,32 @@ export default function Projects() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const projects = [
-    { 
-      id: 1, 
-      title: "Online Counseling App", 
-      tech: "React • Node.js • MongoDB", 
-      desc: "A secure platform for online mental health support and sessions.",
-      image: Project1,
-      frontend: "https://github.com/SundariC/MP-Frontend",
-      backend: "https://github.com/SundariC/MP-Backend",
-      live: "https://mp-frontend-lemon.vercel.app/"
-    },
-    { 
-      id: 2, 
-      title: "Movie Ticket Booking", 
-      tech: "MERN Stack • Redux • Stripe", 
-      desc: "Real-time seat selection and secure payment integration.",
-      image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000",
-      frontend: "#",
-      backend: "#",
-      live: "#"
-    }
-  ];
+const projects = [
+  { 
+    id: 1, 
+    title: "Online Counseling App", 
+    tech: "React • Node.js • MongoDB", 
+    desc: "A secure platform for online mental health support and sessions.",
+    summary: "Built a full-stack mental health platform that connects therapists with patients, ensuring end-to-end encryption for privacy.",
+    features: ["Real-time Chat • Appointment Booking • Secure JWT Auth"],
+    image: Project1,
+    frontend: "https://github.com/SundariC/MP-Frontend",
+    backend: "https://github.com/SundariC/MP-Backend",
+    live: "https://mp-backend-1-82km.onrender.com/"
+  },
+  { 
+    id: 2, 
+    title: "Movie Ticket Booking", 
+    tech: "MERN Stack • Redux • Stripe", 
+    desc: "Real-time seat selection and secure payment integration.",
+    summary: "Developing a seamless movie booking experience with live seat availability and payment gateway integration.",
+    features: ["Seat Selection • Payment Integration • Email Confirmation"],
+    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000",
+    frontend: "#",
+    backend: "#",
+    live: "#"
+  }
+];
 
   return (
     <section id="project" className="relative min-h-screen py-32 overflow-hidden bg-[#050505]">
@@ -91,6 +96,12 @@ export default function Projects() {
                   </div>
                   <p className="text-gray-400 text-sm leading-relaxed font-medium mb-8 max-w-md">
                     {project.desc}
+                  </p>
+                   <p className="text-gray-400 text-sm leading-relaxed font-medium mb-8 max-w-md">
+                    {project.summary}
+                  </p>
+                   <p className="text-gray-400 text-sm leading-relaxed font-medium mb-8 max-w-md">
+                    {project.features}
                   </p>
                 </div>
 

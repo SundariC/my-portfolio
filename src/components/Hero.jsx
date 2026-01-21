@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Hero() {
@@ -14,16 +14,15 @@ export default function Hero() {
     const handleMouseMove = (e) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
     <section className="relative min-h-screen bg-[#050505] overflow-hidden flex items-center justify-center">
-      
       {/* 1. Animated Background Text (Follows Mouse) */}
       <motion.div
-        style={{ 
+        style={{
           y: yScroll,
           x: (mousePos.x - window.innerWidth / 2) * 0.05,
           rotateX: (mousePos.y - window.innerHeight / 2) * -0.01,
@@ -37,18 +36,17 @@ export default function Hero() {
       </motion.div>
 
       {/* 2. Interactive Cursor Glow Layer */}
-      <div 
+      <div
         className="fixed w-[600px] h-[600px] bg-[#7C3AED]/5 rounded-full blur-[120px] pointer-events-none z-0 hidden md:block"
-        style={{ 
-          left: mousePos.x - 300, 
+        style={{
+          left: mousePos.x - 300,
           top: mousePos.y - 300,
-          transition: 'left 0.2s ease-out, top 0.2s ease-out' 
+          transition: "left 0.2s ease-out, top 0.2s ease-out",
         }}
       />
 
       {/* 3. Main Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 grid md:grid-cols-2 gap-10 md:gap-20 items-center">
-        
         {/* LEFT CONTENT: Text & Typing */}
         <motion.div
           initial={{ opacity: 0, y: 80 }}
@@ -60,17 +58,24 @@ export default function Hero() {
           </span> */}
 
           <h1 className="text-7xl md:text-[9vw] font-black leading-[0.8] tracking-tighter mb-8 text-white uppercase">
-            S<span className="text-[#7C3AED] italic drop-shadow-[0_0_30px_rgba(124,58,237,0.5)]">UNDAR</span>I
+            S
+            <span className="text-[#7C3AED] italic drop-shadow-[0_0_30px_rgba(124,58,237,0.5)]">
+              UNDAR
+            </span>
+            I
           </h1>
 
           <div className="text-gray-400 text-xl md:text-2xl max-w-lg mb-12 font-medium leading-relaxed">
-            Full Stack Developer and  <br />
+            Full Stack Developer and <br />
             <span className="text-white border-b-2 border-[#7C3AED] pb-1 inline-block mt-2">
               <TypeAnimation
                 sequence={[
-                  'scalable web applications.', 2000,
-                  'performance driven UIs.', 2000,
-                  'full-stack solutions.', 2000
+                  "scalable web applications.",
+                  2000,
+                  "performance driven UIs.",
+                  2000,
+                  "full-stack solutions.",
+                  2000,
                 ]}
                 repeat={Infinity}
               />
@@ -79,12 +84,24 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-6 mb-12">
-            <button id="work" className="px-10 py-5 bg-[#7C3AED] text-white rounded-full text-xs font-black tracking-widest hover:scale-110 transition shadow-[0_0_40px_rgba(124,58,237,0.4)] uppercase">
+            <a
+              href="https://github.com/SundariC"
+              target="_blank"
+              rel="noreferrer"
+              className="px-10 py-5 bg-[#7C3AED] text-white rounded-full text-xs font-black tracking-widest hover:scale-110 transition shadow-[0_0_40px_rgba(124,58,237,0.4)] uppercase inline-block"
+            >
               View Work
-            </button>
-            <button className="px-10 py-5 border border-white/20 rounded-full text-xs font-black tracking-widest hover:bg-white hover:text-black transition uppercase">
-             Resume
-            </button>
+            </a>
+
+            {/* RESUME BUTTON - Views PDF in new tab */}
+            <a
+              href="/sundari-resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="px-10 py-5 border border-white/20 rounded-full text-xs font-black tracking-widest hover:bg-white hover:text-black transition uppercase inline-block"
+            >
+              Resume
+            </a>
           </div>
 
           {/* Social Icons */}
@@ -102,10 +119,11 @@ export default function Hero() {
           className="relative flex justify-center mt-10 md:mt-0"
         >
           <div className="relative w-[300px] h-[400px] md:w-[350px] md:h-[480px] rounded-[50px] bg-gradient-to-br from-[#7C3AED]/20 to-black border border-white/10 backdrop-blur-3xl p-6">
-            
             <div className="w-full h-full rounded-[40px] bg-[#030014] flex items-center justify-center overflow-hidden border border-white/5 shadow-inner group">
-               {/* Grayscale Icon that glows on hover */}
-               <span className="text-white/10 text-9xl group-hover:text-[#7C3AED]/30 transition-all duration-700 group-hover:scale-110">👩‍💻</span>
+              {/* Grayscale Icon that glows on hover */}
+              <span className="text-white/10 text-9xl group-hover:text-[#7C3AED]/30 transition-all duration-700 group-hover:scale-110">
+                👩‍💻
+              </span>
             </div>
 
             {/* FLOATING BADGES */}
@@ -136,7 +154,6 @@ export default function Hero() {
       >
         <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
       </motion.div>
-
     </section>
   );
 }
