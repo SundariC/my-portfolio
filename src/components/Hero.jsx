@@ -64,7 +64,7 @@ export default function Hero() {
           </h1>
 
           <div className="text-gray-400 text-xl md:text-2xl max-w-lg mb-12 font-medium leading-relaxed">
-            Hi, I’m Sundari. I build modern, responsive, and <br className="hidden md:block"/>
+            Full Stack Developer and  <br />
             <span className="text-white border-b-2 border-[#7C3AED] pb-1 inline-block mt-2">
               <TypeAnimation
                 sequence={[

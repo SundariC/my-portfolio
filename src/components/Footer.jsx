@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa';
+import emailjs from '@emailjs/browser'; // Idhai import panni irukkaen
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState(""); // 1. Message state added
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  // Mouse move logic for background "CONNECT" text
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePos({ x: e.clientX, y: e.clientY });
@@ -17,16 +18,36 @@ export default function Footer() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // 2. Updated handleSend with EmailJS & .env
   const handleSend = (e) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || !message) return;
     setIsSending(true);
-    setTimeout(() => {
-      setIsSending(false);
-      setShowSuccess(true);
-      setEmail("");
-      setTimeout(() => setShowSuccess(false), 5000);
-    }, 1500);
+
+    // .env file variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID; 
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    const templateParams = {
+      from_email: email,
+      to_name: 'Sundari',
+      message: message, // Message field
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then(() => {
+        setIsSending(false);
+        setShowSuccess(true);
+        setEmail("");
+        setMessage(""); // Reset message
+        setTimeout(() => setShowSuccess(false), 5000);
+      })
+      .catch((err) => {
+        console.error('FAILED...', err);
+        setIsSending(false);
+        alert("Error sending mail. Check your .env keys!");
+      });
   };
 
   const scrollToTop = () => {
@@ -36,7 +57,6 @@ export default function Footer() {
   return (
     <footer id="contact" className="relative bg-[#050505] py-24 border-t border-white/5 overflow-hidden">
       
-      {/* 1. Background Motion Text (Connect) */}
       <motion.h1 
         style={{ 
           x: (mousePos.x - window.innerWidth / 2) * 0.05,
@@ -50,15 +70,13 @@ export default function Footer() {
       <div className="container mx-auto px-6 relative z-10">
         
         <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
-          {/* Left Side: Text & Navbar Links */}
           <div className="text-left">
             <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-8 leading-none">
               CONTACT <br /> <span className="text-[#7C3AED] italic text-glow">ME</span>
             </h3>
             
-            {/* Quick Links (Navbar items) */}
             <div className="flex flex-wrap gap-x-8 gap-y-4 mb-10">
-              {["Home", "About", "Skills", "Work"].map((item) => (
+              {["Home", "About", "Skills", "Projets"].map((item) => (
                 <a 
                   key={item} 
                   href={`#${item.toLowerCase()}`}
@@ -69,7 +87,6 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Real Social Icons */}
             <div className="flex gap-6 text-2xl text-white/20">
               <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaGithub /></a>
               <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaLinkedin /></a>
@@ -78,10 +95,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right Side: Glassmorphism Form */}
           <div className="relative">
             <div className="p-8 rounded-[40px] bg-white/[0.02] border border-white/10 backdrop-blur-3xl">
               <p className="text-gray-400 text-sm mb-6 font-medium">Have a project in mind? Drop your mail below.</p>
+              
               <form onSubmit={handleSend} className="relative flex flex-col gap-4">
                 <input 
                   type="email" 
@@ -91,43 +108,51 @@ export default function Footer() {
                   placeholder="Your Email Address"
                   className="w-full bg-white/5 border border-white/10 px-6 py-4 rounded-2xl text-sm text-white outline-none focus:border-[#7C3AED]/50 transition-all"
                 />
+
+                {/* 3. Puthiya Message Box (Textarea) */}
+                <textarea 
+                  required
+                  rows="4"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Your Message..."
+                  className="w-full bg-white/5 border border-white/10 px-6 py-4 rounded-2xl text-sm text-white outline-none focus:border-[#7C3AED]/50 transition-all resize-none"
+                />
+
                 <button 
                   type="submit"
                   disabled={isSending}
                   className="w-full bg-[#7C3AED] text-white py-4 rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg hover:bg-[#6D28D9] transition-all disabled:opacity-50"
                 >
-                  {isSending ? "Sending Message..." : "Send Message"}
+                  {isSending ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
           </div>
         </div>
-       {/* --- BACK TO TOP ADDED HERE --- */}
-       <div className="mt-20 flex justify-center">
+
+        <div className="mt-20 flex justify-center">
             <motion.div 
               onClick={scrollToTop}
               whileHover={{ scale: 1.1, y: -5 }}
               className="flex flex-col items-center gap-3 cursor-pointer group"
             >
-              
+              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#7C3AED]/50 transition-all">
+                <span className="text-white text-lg group-hover:text-[#7C3AED]">↑</span>
+              </div>
               <span className="text-[8px] font-black uppercase tracking-[0.3em] text-gray-600 group-hover:text-white transition-colors">
                 Back to Top
               </span>
             </motion.div>
         </div>
 
-        {/* Bottom Copyright Bar */}
         <div className="mt-16 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-600">
           <p className="text-[10px] font-mono uppercase tracking-[0.4em]">
             © {new Date().getFullYear()} Sundari — Developer Portfolio
           </p>
-          <div className="flex gap-8 text-[9px] font-black uppercase tracking-widest">
-            {/* Social Links... */}
-          </div>
         </div>
       </div>
 
-      {/* Success Notification */}
       <AnimatePresence>
         {showSuccess && (
           <motion.div
@@ -144,10 +169,8 @@ export default function Footer() {
               </div>
             </div>
           </motion.div>
-          
         )}
       </AnimatePresence>
-         
     </footer>
   );
 }

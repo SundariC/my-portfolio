@@ -36,7 +36,7 @@ export default function About() {
           transition={{ duration: 1.2 }}
         >
           <p className="text-purple-400 tracking-[0.4em] text-sm mb-6 uppercase">
-            WHO I AM
+            ABOUT ME
           </p>
 
           <h2 className="text-5xl md:text-6xl font-black mb-8 uppercase text-white">
@@ -59,7 +59,7 @@ export default function About() {
           className="relative"
         >
           <div className="p-10 rounded-[32px] bg-white/5 border border-white/10 backdrop-blur-xl">
-            <h3 className="text-xl font-bold mb-4 text-white uppercase tracking-widest text-sm">Core Focus</h3>
+            <h3 className="text-xl font-bold mb-4 text-white uppercase tracking-widest">Core Focus</h3>
             <ul className="space-y-3 text-gray-400 font-medium">
               <li>• Frontend Excellence</li>
               <li>• Backend Architecture</li>

@@ -11,7 +11,7 @@ const Navbar = () => {
       setScrolled(window.scrollY > 50);
 
       // Scroll Spy Logic
-      const sections = ['about', 'skills', 'work', 'contact'];
+      const sections = ['about', 'skills', 'project', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       sections.forEach((section) => {
@@ -32,7 +32,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'about', href: '#about', id: 'about' },
     { name: 'Skills', href: '#skills', id: 'skills' },
-    { name: 'Work', href: '#work', id: 'work' },
+    { name: 'project', href: '#project', id: 'project' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -75,13 +75,13 @@ const Navbar = () => {
       </div>
 
       {/* Hire Me Button */}
-      <motion.button 
+      {/* <motion.button 
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="bg-[#7C3AED] text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest shadow-[0_10px_20px_rgba(124,58,237,0.3)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.5)] transition-all"
       >
         Hire Me
-      </motion.button>
+      </motion.button> */}
     </motion.nav>
   );
 };
