@@ -88,8 +88,8 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-6 text-2xl text-white/20">
-              <a href="https://github.com/SundariC" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaGithub /></a>
-              <a href="https://www.linkedin.com/in/sundari-c-b81b67222/" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaLinkedin /></a>
+              <a target="_blank" href="https://github.com/SundariC" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaGithub /></a>
+              <a target="_blank" href="https://www.linkedin.com/in/sundari-c-b81b67222/" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaLinkedin /></a>
               {/* <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaInstagram /></a>
               <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaTwitter /></a> */}
             </div>
