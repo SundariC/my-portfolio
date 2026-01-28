@@ -30,7 +30,7 @@ const projects = [
   },
   { 
     id: 2, 
-    title: "Movie Ticket Booking", 
+    title: "Movie Ticket Booking • In Progress", 
     tech: "MERN Stack • Redux • Stripe", 
     desc: "Real-time seat selection and secure payment integration.",
     summary: "Developing a seamless movie booking experience with live seat availability and payment gateway integration.",
