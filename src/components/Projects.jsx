@@ -19,14 +19,14 @@ const projects = [
   { 
     id: 1, 
     title: "Online Counseling App • Completed", 
-    tech: "React • Node.js • MongoDB", 
-    desc: "A secure platform for online mental health support and sessions.",
-    summary: "Built a full-stack mental health platform that connects therapists with patients, ensuring end-to-end encryption for privacy.",
-    features: ["Real-time Chat • Appointment Booking • Secure JWT Auth"],
+    tech: " Technology Used: HTML • MongoDB • Express.js • React.js • Node.js • JWT • Socket.io • Tailwind CSS.", 
+    desc: "A comprehensive MERN stack application designed to provide holistic mental health support.",
+    summary: " Integrated real-time messaging to facilitate immediate peer-to-peer or professional support sessions •  Implemented a secure payment gateway to manage consultation fees and service subscriptions. •  Developed robust REST APIs using Node.js/Express and secured user data using JWT authentication.",
+    features: ["Real-time Chat • Appointment Booking • Secure JWT Auth • Payment Integration"],
     image: Project1,
     frontend: "https://github.com/SundariC/MP-Frontend",
     backend: "https://github.com/SundariC/MP-Backend",
-    live: "https://mp-backend-1-82km.onrender.com/"
+    live: "https://mp-frontend-lemon.vercel.app/"
   },
   { 
     id: 2, 
@@ -36,8 +36,8 @@ const projects = [
     summary: "Developing a seamless movie booking experience with live seat availability and payment gateway integration.",
     features: ["Seat Selection • Payment Integration • Email Confirmation"],
     image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000",
-    frontend: "#",
-    backend: "#",
+    frontend: "https://github.com/SundariC/MB-Frontend",
+    backend: "https://github.com/SundariC/MB-Backend",
     live: "#"
   }
 ];

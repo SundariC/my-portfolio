@@ -76,7 +76,7 @@ export default function Footer() {
             </h3>
             
             <div className="flex flex-wrap gap-x-8 gap-y-4 mb-10">
-              {["Hero", "About", "Skills", "Project"].map((item) => (
+              {[ "About", "Skills", "Project"].map((item) => (
                 <a 
                   key={item} 
                   href={`#${item.toLowerCase()}`}
@@ -88,10 +88,10 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-6 text-2xl text-white/20">
-              <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaGithub /></a>
-              <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaLinkedin /></a>
-              <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaInstagram /></a>
-              <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaTwitter /></a>
+              <a href="https://github.com/SundariC" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/sundari-c-b81b67222/" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaLinkedin /></a>
+              {/* <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaInstagram /></a>
+              <a href="#" className="hover:text-[#7C3AED] transition-all hover:-translate-y-1"><FaTwitter /></a> */}
             </div>
           </div>
 
