@@ -76,7 +76,7 @@ export default function Footer() {
             </h3>
             
             <div className="flex flex-wrap gap-x-8 gap-y-4 mb-10">
-              {["Home", "About", "Skills", "Projets"].map((item) => (
+              {["Hero", "About", "Skills", "Project"].map((item) => (
                 <a 
                   key={item} 
                   href={`#${item.toLowerCase()}`}

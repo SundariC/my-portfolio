@@ -18,7 +18,7 @@ export default function Projects() {
 const projects = [
   { 
     id: 1, 
-    title: "Online Counseling App", 
+    title: "Online Counseling App • Completed", 
     tech: "React • Node.js • MongoDB", 
     desc: "A secure platform for online mental health support and sessions.",
     summary: "Built a full-stack mental health platform that connects therapists with patients, ensuring end-to-end encryption for privacy.",
