@@ -95,7 +95,7 @@ export default function Hero() {
 
             {/* RESUME BUTTON - Views PDF in new tab */}
             <a
-              href="/SundariC-FSD-Resume.pdf"
+              href="/sundaric-FSD-resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="px-10 py-5 border border-white/20 rounded-full text-xs font-black tracking-widest hover:bg-white hover:text-black transition uppercase inline-block"
