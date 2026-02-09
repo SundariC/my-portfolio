@@ -95,7 +95,7 @@ export default function Hero() {
 
             {/* RESUME BUTTON - Views PDF in new tab */}
             <a
-              href="https://drive.google.com/file/d/1TMcALBBL_O7pFiZO9sI0kSlR49eU_c2Q/view?usp=sharing"
+              href="https://drive.google.com/file/d/14y4M0V-aklg0sjXPXDFB6B-rdc5uGEy0/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="px-10 py-5 border border-white/20 rounded-full text-xs font-black tracking-widest hover:bg-white hover:text-black transition uppercase inline-block"
@@ -103,12 +103,6 @@ export default function Hero() {
               Resume
             </a>
           </div>
-
-          {/* Social Icons */}
-          {/* <div className="flex gap-8 text-2xl text-white/30">
-            <FaGithub className="hover:text-[#7C3AED] transition-all cursor-pointer hover:-translate-y-1" />
-            <FaLinkedin className="hover:text-[#7C3AED] transition-all cursor-pointer hover:-translate-y-1" />
-          </div> */}
         </motion.div>
 
         {/* RIGHT SIDE: Animated Avatar Card */}
