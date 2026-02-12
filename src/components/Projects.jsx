@@ -58,7 +58,7 @@ export default function Projects() {
         "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000",
       frontend: "https://github.com/SundariC/MB-Frontend",
       backend: "https://github.com/SundariC/MB-Backend",
-      live: "#",
+      live: "https://mb-frontend-rho.vercel.app/",
     },
   ];
 
