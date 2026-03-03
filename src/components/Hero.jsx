@@ -95,7 +95,7 @@ export default function Hero() {
 
             {/* RESUME BUTTON - Views PDF in new tab */}
             <a
-              href="https://drive.google.com/file/d/1FAI9M4Tbkwxrch8Vws74h5X1c24odaAb/view?usp=sharing"
+              href="https://drive.google.com/file/d/1DpGj9S9zuITyJfedim2EEZFN3CffVCwS/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="px-10 py-5 border border-white/20 rounded-full text-xs font-black tracking-widest hover:bg-white hover:text-black transition uppercase inline-block"
